@@ -8,12 +8,12 @@
 		<style>
 			h1 {
 				color: white;
-				text-align: left;
+				font-size: 30pt;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="menuList">
+		<div class="menuList">
 			<h1>MyPage</h1>
 			<%@ include file="Menu.jsp" %>
 		</div>		

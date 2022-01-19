@@ -15,7 +15,7 @@
  				font-size: 60pt; 
 				color: #FFA500;  
 			}
-			#myPage {
+			a {
 				color: #A52A2A;  
 				font-size: 30pt; 
 			}
@@ -23,10 +23,10 @@
 		</style>
 	</head>
 	<body>
-		<br>
+		<br><br><br><br>
 		<h1>家計簿アルバム</h1>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br>
-		<div id="myPage">
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="myPage">
 			<a href="/Portfolio/MypageServlet">🏠 マイページ</a>
 		</div>
 	</body>

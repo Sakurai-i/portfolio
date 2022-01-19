@@ -7,30 +7,27 @@
 		<title>一覧</title>
 		<style>
 			h1 {
-				color: #ffffff; 
+				color: #ffffff;
+				font-size: 30pt; 
 			}
 		</style>
 	</head>
 	<body>
-		<div id="menuList">
+		<div class="menuList">
 			<h1>一覧</h1>
 			<%@ include file="Menu.jsp" %>
 		</div>
-		<div id="main">
+		<div class="main">
 			<br><br><br>
-			<table>
+			<table style= "width:400px">
 				<tr>
 					<td>データ1-1</td>
-					<td>ブランク</td>
 					<td>データ2-1</td>
-					<td>ブランク</td>	
 					<td>データ3-1</td>
 				</tr>
 				<tr>
 					<td>データ1-2</td>
-					<td>ブランク</td>	
 					<td>データ2-2</td>
-					<td>ブランク</td>	
 					<td>データ3-2</td>
 				</tr>
 			</table>

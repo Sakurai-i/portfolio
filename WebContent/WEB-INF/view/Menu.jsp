@@ -8,31 +8,27 @@
 		<style>
 			body {
 				font-family: "メイリオ";
-				background: linear-gradient(to right, #FFA500 0%, #FFA500 20%, #ffffff 20%,  #ffffff 100%); 
 			}
 			a,h2 {
 				color: #A52A2A;
 				font-size: 20pt;
 			}
-			div#menuList {
-				font-size: 20pt;
-				width: 40%;
-				height: 100vh;
-				float: left;
+			.menuList {
+				position: fixed;
+				width: 20%;
+				height: 100%;
+				overflow: auto;
+				background: #FFA500; 
 			}
-			div#main {
-				font-size: 20pt;
-				width: 60%;
-				height: 100vh;
-				float: right;
+			.main {
+				margin-left: 400px;
+				width: 70%;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="all">
-			<div id="main">
-			</div>
-			<div id="menuList">
+		<div class="all">
+			<div class="menuList">
 				<a href="/Portfolio/MypageServlet">🏠 マイページ</a>
 				<br><br>
 				<a href="/Portfolio/MoneyBookServlet">✏ 家計簿入力</a>
@@ -40,6 +36,8 @@
 				<a href="/Portfolio/AllListServlet">📖 一覧</a>
 				<br><br>
 				<h2>🚪 ログアウト</h2>
+			</div>
+			<div class="main">
 			</div>
 		</div>
 	</body>

@@ -1,4 +1,4 @@
-package servlet;
+package controller;
 
 import java.io.IOException;
 
@@ -17,8 +17,20 @@ public class MypageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// フォワード
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/WEB-INF/jsp/Mypage.jsp");
+				request.getRequestDispatcher("/WEB-INF/view/Mypage.jsp");
 		dispatcher.forward(request, response);
 	}
-
+	/*
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String comment = request.getParameter("comment");
+		String tag = request.getParameter("tag");
+		RequestDispatcher dispatcher = 
+				request.getRequestDispatcher("/WEB-INF/view/Mypage.jsp");
+		dispatcher.forward(request, response);
+	}
+	*/
+	
+	
 }

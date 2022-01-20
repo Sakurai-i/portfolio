@@ -1,9 +1,11 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,10 +21,22 @@ import model.PostMoneyBookLogic;
 public class MypageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
-		//リストを取得して、リクエストスコープに保存
+		
+		//リストをアプリケーションスコープから取得
+		ServletContext application = this.getServletContext();
+		List<MoneyBook> mbList = (List<MoneyBook>) application.getAttribute("mbList");
+		
+		//取得できなかった場合は、　リストを新規作成して、アプリケーションスコープに保存
+		if (mbList == null) {
+			mbList = new ArrayList<>();
+			application.setAttribute("mbList", mbList);
+		}
+		
+		/*//リストを取得して、リクエストスコープに保存
 		GetMoneyBookLogic gmbLogic = new GetMoneyBookLogic();
 		List<MoneyBook> mbList = gmbLogic.execute();
 		request.setAttribute("mbList", mbList);
+		*/
 		
 		//フォワード
 		RequestDispatcher dispatcher =
@@ -37,7 +51,7 @@ public class MypageServlet extends HttpServlet {
 		
 		//リクエストパラメータの取得
 		String date = request.getParameter("date");
-		int price = Integer.parseInt(request.getParameter("price"));
+		String price = request.getParameter("price");
 		String comment = request.getParameter("comment");
 		String tag = request.getParameter("tag");
 		String photo = request.getParameter("photo");

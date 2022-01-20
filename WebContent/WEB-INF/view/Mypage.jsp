@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,6 +17,7 @@
 		<div class="menuList">
 			<h1>MyPage</h1>
 			<%@ include file="Menu.jsp" %>
-		</div>		
+		</div>
+
 	</body>
 </html>

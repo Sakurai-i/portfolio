@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.GetMoneyBookLogic;
 import model.MoneyBook;
 import model.PostMoneyBookLogic;
 
@@ -20,11 +18,6 @@ public class MoneyBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
-		//リストを取得して、リクエストスコープに保存
-		GetMoneyBookLogic gmbLogic = new GetMoneyBookLogic();
-		List<MoneyBook> mbList = gmbLogic.execute();
-		request.setAttribute("mbList", mbList);
-
 		//フォワード
 		RequestDispatcher dispatcher =
 				request.getRequestDispatcher("/WEB-INF/view/MoneyBook.jsp");
@@ -45,7 +38,7 @@ public class MoneyBookServlet extends HttpServlet {
 		PostMoneyBookLogic pmbLogic = new PostMoneyBookLogic();
 		pmbLogic.execute(mb);
 		
-		//マイページにフォワード
+		//家計簿入力画面にフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/MoneyBook.jsp");
 		dispatcher.forward(request, response);
 	}

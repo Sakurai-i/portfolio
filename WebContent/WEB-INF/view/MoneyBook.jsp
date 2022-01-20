@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.MoneyBook,java.util.List" %>
-<%
-//入力内容を取得
-List<MoneyBook> mbList = (List<MoneyBook>) request.getAttribute("mbList");
-%>
 
 <!DOCTYPE html>
 <html>
@@ -63,8 +59,5 @@ List<MoneyBook> mbList = (List<MoneyBook>) request.getAttribute("mbList");
 				</div>
 			</form>
 		</div>
- 		<% for(MoneyBook mb : mbList) {	%>
- 			<P><%= mb.getPrice() %></P>
- 		<% } %>	
 	</body>
 </html>

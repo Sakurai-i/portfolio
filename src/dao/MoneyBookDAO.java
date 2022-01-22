@@ -32,8 +32,9 @@ public class MoneyBookDAO {
 			//結果表に格納されたレコードの内容を
 			//MoneyBookインスタンスに設定し、ArrayListインスタンスに追加
 			while (rs.next()) {
-				String date = rs.getString("DATE");
-				String price = rs.getString("PRICE");
+				String date = rs.getString ("DATE");
+				int price = rs.getInt("PRICE");
+				//int outPrice = rs.getInt("OUTINPRICE");
 				String comment = rs.getString("COMMENT");
 				String tag = rs.getString("TAG");
 				String photo = rs.getString("PHOTO");
@@ -56,7 +57,8 @@ public class MoneyBookDAO {
 			
 			//INSERT文中の「？」に使用する値を設定しSQLを完成
 			pStmt.setString(1, mb.getDate());
-			pStmt.setString(2, mb.getPrice());
+			pStmt.setInt(2, mb.getPrice());
+			//pStmt.setInt(3, mb.getOutPrice());
 			pStmt.setString(3, mb.getComment());
 			pStmt.setString(4, mb.getTag());
 			pStmt.setString(5, mb.getPhoto());

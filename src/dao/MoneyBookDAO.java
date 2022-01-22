@@ -23,7 +23,7 @@ public class MoneyBookDAO {
 		try (Connection conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS)) {
 			
 			//SELECT文を準備
-			String sql = "SELECT DATE,PRICE,COMMENT,TAG,PHOTO FROM MONEYBOOK";
+			String sql = "SELECT DATE,PRICE,COMMENT,TAG FROM MONEYBOOK";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//SELECT文を実行し、結果表を取得
@@ -37,8 +37,8 @@ public class MoneyBookDAO {
 				//int outPrice = rs.getInt("OUTINPRICE");
 				String comment = rs.getString("COMMENT");
 				String tag = rs.getString("TAG");
-				String photo = rs.getString("PHOTO");
-				MoneyBook mb = new MoneyBook(date,price,comment,tag,photo);
+				//String photo = rs.getString("PHOTO");
+				MoneyBook mb = new MoneyBook(date,price,comment,tag,null);
 				mbList.add(mb);
 			}
 		} catch (SQLException e) {
@@ -52,7 +52,7 @@ public class MoneyBookDAO {
 		try(Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
 			
 			//INSERT文の準備
-			String sql = "INSERT INTO MONEYBOOK(DATE,PRICE,COMMENT,TAG,PHOTO) VALUES(?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO MONEYBOOK(DATE,PRICE,COMMENT,TAG) VALUES(?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//INSERT文中の「？」に使用する値を設定しSQLを完成
@@ -61,7 +61,7 @@ public class MoneyBookDAO {
 			//pStmt.setInt(3, mb.getOutPrice());
 			pStmt.setString(3, mb.getComment());
 			pStmt.setString(4, mb.getTag());
-			pStmt.setString(5, mb.getPhoto());
+			//pStmt.setString(5, mb.getPhoto());
 			
 			//INSERT文を実行する
 			int result = pStmt.executeUpdate();

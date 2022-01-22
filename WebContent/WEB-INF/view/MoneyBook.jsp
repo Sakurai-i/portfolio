@@ -31,19 +31,19 @@
 		</div>
 		<div class="main">
 			<!-- <form action="/Portfolio/MypageServlet" method="post" enctype=multipart/form-data> -->
-			<br><br>
-			<input type="date" class="w120" value="<fmt:formatDate value="${mealCancel.mealCancelDate}" pattern="yyyy-MM-dd" />">
-			<br><br><br>
 			<form action="/Portfolio/MypageServlet" method="post" >
-					<p><b><span style="hight: 40px; width: 200px; padding: 20px;  color: #ffffff; font-size: 30px; border-radius: 10px; background-color: #FF69A3;">収 入</span></b><input type="text" style="width:200px;" placeholder="金額を入力">円</p>
-					<p>コメント：<input type="text" name="comment" style="width:200px;"></p>
-					<p>タグ：#<input type="text" name="tag" style="width:200px;"></p>
-					<p>写真：<input type="file" name="file"/></p>
-					<!-- <input type="submit" value="アップロード" /> -->
-					<span style="font-size: 15px;"><img src="/fileupload/upload/"></span>
+				<br><br>
+				<input type="date" name="date" class="w120" value="<fmt:formatDate value="${mealCancel.mealCancelDate}" pattern="yyyy-MM-dd" />">
+				<br><br><br>
+				<p><b><span style="hight: 40px; width: 200px; padding: 20px;  color: #ffffff; font-size: 30px; border-radius: 10px; background-color: #FF69A3;">収 入</span></b><input name="income" type="text" style="width:200px;" placeholder="金額を入力">円</p>
+				<p>コメント：<input type="text" name="comment" style="width:200px;"></p>
+				<p>タグ：#<input type="text" name="tag" style="width:200px;"></p>
+				<p>写真：<input type="file" name="file"/></p>
+				<!-- <input type="submit" value="アップロード" /> -->
+				<span style="font-size: 15px;"><img src="/fileupload/upload/"></span>
 				<br>
 				<div id="input1" style="display:inline-flex">
-					<p><b><span style="hight: 40px; width: 200px; padding: 20px; color: #ffffff; font-size: 30px; border-radius: 10px; background-color: #2C7CFF;">支 出</span></b><input type="text" style="width:200px;" placeholder="金額を入力">円</p>
+					<p><b><span style="hight: 40px; width: 200px; padding: 20px; color: #ffffff; font-size: 30px; border-radius: 10px; background-color: #2C7CFF;">支 出</span></b><input name="expense" type="text" style="width:200px;" placeholder="金額を入力">円</p>
 				</div>
 				<div id="input2">
 					<p>コメント：<input type="text" style="width:200px;"></p>

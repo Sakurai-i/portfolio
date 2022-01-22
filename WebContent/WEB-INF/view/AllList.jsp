@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="model.MoneyBook,java.util.List" %>
+<%
+//リストをリクエストスコープから取得
+List<MoneyBook> mbList = (List<MoneyBook>) request.getAttribute("mbList");
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,6 +17,9 @@
 				color: #ffffff;
 				font-size: 30pt; 
 			}
+			p {
+				font-size: 12pt;
+			}
 		</style>
 	</head>
 	<body>
@@ -19,18 +29,9 @@
 		</div>
 		<div class="main">
 			<br><br><br>
-			<table style= "width:400px">
-				<tr>
-					<td>データ1-1</td>
-					<td>データ2-1</td>
-					<td>データ3-1</td>
-				</tr>
-				<tr>
-					<td>データ1-2</td>
-					<td>データ2-2</td>
-					<td>データ3-2</td>
-				</tr>
-			</table>
+			<% for(MoneyBook mb : mbList) { %>
+				<p><%= mb.getDate() %> :<%= mb.getPrice() %> :<%= mb.getComment() %> :<%= mb.getTag() %> : <%= mb.getPhoto() %></p>
+			<% } %>
 		</div>
 	</body>
 </html>
